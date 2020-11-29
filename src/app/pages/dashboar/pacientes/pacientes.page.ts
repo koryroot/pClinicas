@@ -11,7 +11,7 @@ export class PacientesPage implements OnInit {
   public header = ["name","lastname","cedula","gender"];
   public objectTable = ["name","lastname","cedula","gender"];
   
-  constructor(private paciente: PacienteRequestService, private user: AuthService) { }
+  constructor() { }
   // "alergies": "al polvo",
   // "birthdate": "1989-10-14 00:00:00.000",
   // "bloodType": "O+",
