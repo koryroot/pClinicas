@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { PacienteRequestService } from 'src/app/services/pacientes/paciente-request.service';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-table-list',
@@ -16,7 +17,9 @@ export class TableListComponent implements OnInit {
   @Input() public endpoit: string;
   public data: [];
   
-  constructor(private paciente: PacienteRequestService, private user: AuthService, private router: Router) {
+  constructor(private paciente: PacienteRequestService,
+              private user: AuthService, private router: Router,
+              ) {
 
    }
    
@@ -26,7 +29,11 @@ export class TableListComponent implements OnInit {
 
   goto(){
     console.log(this.rute);
-    this.router.navigate([this.rute])
+    console.log(this.router.url)
+    this.router.navigate([this.router.url + "/update"])
+  }
+  delete(cedula){
+    // .
   }
 
   getlist(){
