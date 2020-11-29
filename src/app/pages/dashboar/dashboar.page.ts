@@ -12,7 +12,7 @@ export class DashboarPage implements OnInit {
 
   ngOnInit() {
   }
-  navigate(route){
-    this.router.navigate(['login']);
-  }
+  // navigate(route){
+  //   // this.router.navigate(['login']);
+  // }
 }
