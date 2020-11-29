@@ -5,15 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DashboarPageRoutingModule } from './dashboar-routing.module';
+import { ComponentsModule } from '../../components/components.module';
 
 import { DashboarPage } from './dashboar.page';
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     FormsModule,
     IonicModule,
-    DashboarPageRoutingModule
+    DashboarPageRoutingModule,
+    
   ],
   declarations: [DashboarPage]
 })
