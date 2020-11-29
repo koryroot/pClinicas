@@ -15,7 +15,8 @@
         <tr *ngFor="let paciente of data">
           <td *ngFor="let key of keys">{{paciente[key]}}</td>
           <td>
-            <ion-icon name="pencil-outline" (click)="goto()"class="ml-2"></ion-icon>
+
+            <ion-icon name="pencil-outline" (click)="goto(paciente[endpoit === 'patient/all' ? 'cedula':'patientCedula'])" class="ml-2"></ion-icon>
             <ion-icon name="trash-outline" class="ml-2" (click)="delete()"></ion-icon>
             
           </td>

@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./crear/crear.module').then( m => m.CrearPageModule)
   },
   {
-    path: 'update',
+    path: 'update/:cedula',
     loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
   }
  
