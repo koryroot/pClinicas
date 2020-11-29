@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consulta.page.scss'],
 })
 export class ConsultaPage implements OnInit {
-  public header = ["Nombre","Apellido","Cedula","Genero"];
-  public objectTable = ["name","lastname","cedula","gender"];
-  public enpoint = 'patient/all';
+  public header = ["cedula","razon","nota","dianostico"];
+  public objectTable = ["patientCedula","reason","note","diagnose"];
+  public enpoint = 'consultation/doctor/all';
 
   constructor() { }
 

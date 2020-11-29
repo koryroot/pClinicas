@@ -1,7 +1,10 @@
 
-<div class="row justify-content-center">
+<ion-spinner name="crescent" *ngIf="loadding"></ion-spinner>
+
+
+<div class="row justify-content-center"  >
   <div class="col col-sm-8 col-lg-8 mt-5 fadeInDown ">
-    <table class="table">
+    <table class="table" *ngIf="empy">
       <thead>
         <tr>
           <th scope="col" *ngFor="let item of header" >{{item}}</th>
@@ -20,6 +23,9 @@
         
       </tbody>
     </table>
-  
+    <div class="box" *ngIf="!empy && !loadding">
+      <p>No posee registros</p>
+    </div>
   </div>
+  
 </div>
