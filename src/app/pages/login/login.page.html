@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Iniciar Seccion </h2>
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../../assets/medico.svg" id="icon" class="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
 
+    
+      <form  [formGroup]="form" (ngSubmit)="cargar()">
+
+        <input type="text"  class="w-btn fadeIn second" placeholder="correo Electronico" formControlName="correo">
+        <input type="text"class="w-btn fadeIn third"  placeholder="contraseña" formControlName="pass">
+        <input type="submit" class="w-btn fadeIn fourth" value="Ok!">
+
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/register">No tienes cuenta? Registrate</a>
+      </div>
+  
+    </div>
+  </div>
 </ion-content>
