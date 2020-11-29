@@ -32,7 +32,7 @@ export class TableListComponent implements OnInit {
   goto(cedula){
     this.router.navigate([this.router.url + "/update/" + cedula])
   }
-  delete(cedula){
+  delete(){
     // .
   }
 
