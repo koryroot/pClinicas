@@ -1,18 +1,25 @@
 
 <div class="row justify-content-center">
-  <div class="col col-lg-8 mt-5 fadeInDown ">
+  <div class="col col-sm-8 col-lg-8 mt-5 fadeInDown ">
     <table class="table">
       <thead>
         <tr>
           <th scope="col" *ngFor="let item of header" >{{item}}</th>
+          <th>acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let paciente of data">
           <td *ngFor="let key of keys">{{paciente[key]}}</td>
+          <td>
+            <ion-icon name="pencil-outline" (click)="goto()"class="ml-2"></ion-icon>
+            <ion-icon name="trash-outline" class="ml-2"></ion-icon>
+            
+          </td>
         </tr>
         
       </tbody>
     </table>
+  
   </div>
 </div>
