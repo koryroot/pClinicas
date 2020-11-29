@@ -1,20 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { apiUrl } from './enviroment/enviroment.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = "https://dgon3z.deta.dev/api/"
   private token: string;
+
   constructor( private http:HttpClient) {
-      this.token = JSON.stringify(localStorage.getItem("token"));
+    const localState = localStorage.getItem("token");
+    if (localState === undefined || localState === '' ){
+      console.log(localState);
+      this.token = null;
+    }else{
+      console.log(localState);
+      this.token = localState;
+    }
    }
 
 
   register(ref,body){
-    return this.http.post(this.apiUrl + ref, body);
+
+    return this.http.post( apiUrl + ref, body);
   }
   login(){
     

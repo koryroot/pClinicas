@@ -18,13 +18,7 @@ const routes: Routes = [
   {
     path: 'dash',
     loadChildren: () => import('./pages/dashboar/dashboar.module').then( m => m.DashboarPageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  
+  }
 ];
 
 @NgModule({
