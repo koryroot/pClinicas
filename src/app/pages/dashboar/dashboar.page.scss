@@ -1,4 +1,39 @@
-.post {
-    position: relative;
-    top: 20%;
+#fondo_carta{
+    background: #E0E8E5;
+    width: 100%;
+    margin: 0%;
+}
+.carta_espacio1{
+    margin-top: 2%;
+    padding-left: 12%;
+    padding-right: 4%;
+}
+.carta_espacio2{
+    margin-top: 2%;
+    padding-left: 4%;
+    padding-right: 12%;
+}
+@media screen and (max-width: 768px) {
+    .carta_espacio1{
+        margin-bottom: 40px;
+        padding-left: 14%;
+        padding-right: 14%;
+    }
+    .carta_espacio2{
+        padding-left: 14%;
+        padding-right: 14%;
+    }
+}
+.titulo_carta{
+    font-size: 40px;
+}
+.card {
+    padding: 5%;
+    border-radius: 20px;
+    background: #5EBDBD;
+}
+.card-body{
+    padding: 10%;
+    border-radius: 20px;
+    background: white;
 }
