@@ -15,10 +15,6 @@ export class RegisterPage implements OnInit {
   constructor(private fb: FormBuilder , private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
-    if(this.auth.getToken()){
-      this.router.navigate(['/login']);
-      console.log("hola")
-    }
     this.initForm();
   }
   initForm(){

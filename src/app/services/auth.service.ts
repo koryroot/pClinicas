@@ -16,6 +16,9 @@ export class AuthService {
   register(ref,body){
     return this.http.post(this.apiUrl + ref, body);
   }
+  login(){
+    
+  }
   saveUser(token){
     this.token = token;
     localStorage.setItem("token",token);
