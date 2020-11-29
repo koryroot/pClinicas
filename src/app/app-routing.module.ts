@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'dash',
+    loadChildren: () => import('./pages/dashboar/dashboar.module').then( m => m.DashboarPageModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
