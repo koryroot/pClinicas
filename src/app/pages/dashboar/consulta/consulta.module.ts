@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ConsultaPageRoutingModule } from './consulta-routing.module';
 
 import { ConsultaPage } from './consulta.page';
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     FormsModule,
     IonicModule,
-    ConsultaPageRoutingModule
+    ConsultaPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ConsultaPage]
 })

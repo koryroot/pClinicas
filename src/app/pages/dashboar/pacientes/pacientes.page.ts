@@ -8,10 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./pacientes.page.scss'],
 })
 export class PacientesPage implements OnInit {
-  public header = ["name","lastname","cedula","gender"];
+  public header = ["Nombre","Apellido","Cedula","Genero"];
   public objectTable = ["name","lastname","cedula","gender"];
+  public enpoint = 'patient/all';
   
-  constructor(private paciente: PacienteRequestService, private user: AuthService) { }
+  constructor() { }
   // "alergies": "al polvo",
   // "birthdate": "1989-10-14 00:00:00.000",
   // "bloodType": "O+",
