@@ -26,8 +26,8 @@ export class CrearPage implements OnInit {
   ngOnInit() {
     this.initform();
     this.param = this.rute.snapshot.params.cedula;
-    console.log(typeof this.param);
-    this.param === "new" ? this.isUpdate = true :  this.isUpdate = false;
+    console.log(this.param);
+    this.param === "new" ? this.isUpdate = false :  this.isUpdate = true;
   }
   initform(){
     this.form  = this.fb.group({
@@ -54,11 +54,28 @@ export class CrearPage implements OnInit {
       }
       console.log(body)
     this.pacienterequest.regCosulta(body).subscribe((res)=>{
-      
-    })
+        this.router.navigate(['dash/consulta']);
+    });
   }
-  update(param){
-    console.log(this.param);
+  update(){
+    const body =
+      {
+        "patientCedula": this.form.controls.cedula.value,
+        "insuranceNumber": this.form.controls.seguro.value,
+        "date": this.form.controls.fecha.value,
+        "amount": 0,
+        "reason": this.form.controls.motivo.value,
+        "diagnose": this.form.controls.diagnostico.value,
+        "note": "",
+        "foto": ""
+      }
+    this.pacienterequest.updateConsulta(body, this.param).subscribe((res)=>{
+      console.log(res);
+      this.router.navigate(['dash/consulta']);
+    });
+  }
+  back(){
+    this.router.navigate(['dash/consulta']);
   }
 
 }

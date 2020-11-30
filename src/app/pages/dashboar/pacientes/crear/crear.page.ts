@@ -54,20 +54,27 @@ export class CrearPage implements OnInit {
     }
     this.pacienterequest.regPaciente(body).subscribe((res)=>{
       console.log(res);
+      this.router.navigate(['dash/paciente']);
+
     })
   }
   update(param){
     console.log(this.form.controls)
-    const body={
+    const body = {
       "cedula": this.form.controls.cedula.value,
       "foto": "",
       "email":"rm12345@gmail.com",
       "bloodType": this.form.controls.tipeBlood.value,
       "alergies": this.form.controls.alerg.value
-    }
+    };
     this.pacienterequest.updatePaciente(body).subscribe((res)=>{
       console.log(res);
-    })
+      this.router.navigate(['dash/paciente']);
+     
+    });
+  }
+  back(){
+    this.router.navigate(['dash/paciente']);
   }
 
 }

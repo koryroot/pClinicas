@@ -43,6 +43,9 @@ export class PacienteRequestService {
 
     return this.http.delete(`${apiUrl}consultation/delete?consultId=${cedula}&token=${this.auth.getToken()}`);
   }
+  updateConsulta(body,key){
+    // https://dgon3z.deta.dev/api/consultation/modify?consultId=ybai5q100f7a&token=v-3rxyaqoWQ7FjtQOICjjYEGZUw
+    return this.http.put(`${apiUrl}consultation/modify?consultId=${key}&token=${this.auth.getToken()}`,body);
+  }
 
-  
 }

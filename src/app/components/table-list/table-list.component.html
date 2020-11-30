@@ -21,7 +21,7 @@
             </div>
             <div *ngIf="endpoit != 'patient/all'">
               .
-              <ion-icon name="pencil-outline" (click)="goto(dato['patientCedula'])" class="ml-2"></ion-icon>
+              <ion-icon name="pencil-outline" (click)="goto(dato['key'])" class="ml-2"></ion-icon>
               <ion-icon name="trash-outline" class="ml-2" (click)="del(dato['key'])"></ion-icon>
             </div>
           </td>
