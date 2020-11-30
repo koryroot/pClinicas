@@ -32,16 +32,13 @@ export class LoginPage implements OnInit {
     console.log(body);
     this.auth.register('doctor/login',body).subscribe((res)=>{
       this.auth.saveUser(res["response"].token);
+      console.log(res)
       console.log(this.auth.getToken());
-      this.router.navigate(['']);
-
-    // "ok": true,
-    // "message": "Doctor creado correctamente"
+      if(res['ok']){
+        this.router.navigate(['']);
+      }
     },(err)=>{
-      console.log(err);
+      console.log(err.message);
     })
-    
   }
-
-  
 }

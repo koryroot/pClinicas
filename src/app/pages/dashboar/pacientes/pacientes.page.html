@@ -1,7 +1,9 @@
 <ion-content>
   <app-navbar></app-navbar>
-  <ion-icon name="add-outline"></ion-icon>
-  <app-table-list
+  
+  <button type="button" class=" fadeIn circl mb-5" routerLink="crear">Nuevo paciente</button>
+
+  <app-table-list 
       [header]="header" [keys]="objectTable" 
       [endpoit]="enpoint"></app-table-list>
 </ion-content>
