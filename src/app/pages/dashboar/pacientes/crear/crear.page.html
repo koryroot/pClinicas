@@ -1,16 +1,15 @@
 
-
 <ion-content>
   <div class="container-fluid fondo_color">
     <div class="row">
         <div class="col-lg-2 col-md-2 col-2 d-flex align-items-center justify-content-center">
-            <img src="flecha-curva.png" class="fecha_atras">
+            <img src="../../../../../assets/flecha-curva.png" class="fecha_atras">
         </div> 
         <div class="col-lg-12 col-md-12 col-12">
             <h1 class="texto_centro">Registro del paciente</h1>
         </div> 
         <div class="col-lg-12 col-md-12 col-12">
-            <form action="">
+            <form [formGroup]="form" (ngSubmit)="cargar()">
                 <div class="container d-flex align-items-center justify-content-center">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
@@ -20,23 +19,18 @@
                                         <label class="label" for="cedula">Cedula</label>
                                     </div> 
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <input class="input" type="text" name="" id="cedula">
+                                        <input class="input" type="text" name="" id="cedula" formControlName="cedula">
                                     </div> 
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label class="label" for="tipo_sangre">Tipo de sangre</label>
                                     </div> 
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <select class="select" name="" id="tipo_sangre">
+                                        <select class="select" name="" id="tipo_sangre" formControlName="tipeBlood">
                                             <option value="B+">B+</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
+                                            <option value="A"></option>
+                                            <option value="AB"></option>
+                                            <option value="O-"></option>
+                                            <option value="O+"></option>
                                         </select>
                                     </div> 
                                 </div>
@@ -47,14 +41,14 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12 d-flex align-items-center justify-content-center">
                                         <div class="fecha_cuadro">
-                                            <img src="mas.png" width="50">
+                                            <img src="../../../../../assets/mas.png" width="50">
                                         </div>
                                     </div> 
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label class="label2" for="alergias">Alergias</label>
                                     </div> 
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <input class="input" type="text" name="" id="alergias">
+                                        <input class="input" type="text" name="" id="alergias" formControlName="alerg">
                                     </div> 
                                 </div>
                             </div>
