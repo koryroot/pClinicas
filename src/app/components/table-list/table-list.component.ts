@@ -15,16 +15,14 @@ export class TableListComponent implements OnInit {
   @Input() public header: [] = [];
   @Input() public keys: [];
   @Input() public endpoit: string;
+  @Input() public busqueda: string;
+
+
   public data: [];
   public loadding = false;
   public empy = false;
-  
-  constructor(private paciente: PacienteRequestService,
-              private user: AuthService, private router: Router,
-              ) {
-
-   }
-   
+  constructor(private paciente: PacienteRequestService,private user: AuthService, private router: Router,
+              ) {}
   ngOnInit() {
     this.getlist();
   }
@@ -46,7 +44,6 @@ export class TableListComponent implements OnInit {
       console.log(this.data)
       this.data.length === 0 ? this.empy = false : this.empy = true;
       this.loadding = false;
-      
 
     });
   }

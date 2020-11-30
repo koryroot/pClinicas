@@ -1,6 +1,6 @@
 <ion-content>
   <app-navbar></app-navbar>
-  <app-search></app-search>
+  <app-search (search)="buscar($event)"></app-search>
   <div class="cont">
     <app-table-list [header]="header" [keys]="objectTable" [endpoit]="enpoint"></app-table-list>
   </div>

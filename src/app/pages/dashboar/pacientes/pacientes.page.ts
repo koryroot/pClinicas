@@ -12,6 +12,7 @@ export class PacientesPage implements OnInit {
   public objectTable = ["name","lastname","cedula","gender"];
   public enpoint = 'patient/all';
   
+  
   constructor() { }
   // "alergies": "al polvo",
   // "birthdate": "1989-10-14 00:00:00.000",
@@ -27,6 +28,8 @@ export class PacientesPage implements OnInit {
   ngOnInit() {
    
   }
- 
+  buscar(data){
+    console.log(data);
+  }
 
 }
