@@ -21,6 +21,11 @@ export class PacienteRequestService {
   deletePaciente(cedula){
     return this.http.delete(`${apiUrl}patient/delete?cedula=${cedula}&token=${this.auth.getToken()}`);
   }
+  updatePaciente(body){
+    // https://dgon3z.deta.dev/api/patient/modify?token=v-3rxyaqoWQ7FjtQOICjjYEGZUw
+    return this.http.put(`${apiUrl}patient/modify?token=${this.auth.getToken()}`,body);
+  
+  }
 
 
 

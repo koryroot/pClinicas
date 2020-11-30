@@ -5,6 +5,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
+
+
+
+
 @Component({
   selector: 'app-crear',
   templateUrl: './crear.page.html',
@@ -19,7 +23,8 @@ export class CrearPage implements OnInit {
     private router: Router,
     private pacienterequest: PacienteRequestService,
     private fb: FormBuilder,
-    private rute: ActivatedRoute) {
+    private rute: ActivatedRoute,
+    ) {
       rute.params.subscribe(res=>{console.log(res)})
     }
 
@@ -27,7 +32,7 @@ export class CrearPage implements OnInit {
     this.initform();
     this.param = this.rute.snapshot.params.cedula;
     console.log(typeof this.param);
-    this.param === "new" ? this.isUpdate = true :  this.isUpdate = false;
+    this.param === "new" ? this.isUpdate = false :  this.isUpdate = true;
   }
   initform(){
     this.form  = this.fb.group({
@@ -52,7 +57,17 @@ export class CrearPage implements OnInit {
     })
   }
   update(param){
-
+    console.log(this.form.controls)
+    const body={
+      "cedula": this.form.controls.cedula.value,
+      "foto": "",
+      "email":"rm12345@gmail.com",
+      "bloodType": this.form.controls.tipeBlood.value,
+      "alergies": this.form.controls.alerg.value
+    }
+    this.pacienterequest.updatePaciente(body).subscribe((res)=>{
+      console.log(res);
+    })
   }
 
 }
