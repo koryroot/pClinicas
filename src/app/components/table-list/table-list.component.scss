@@ -1,12 +1,16 @@
-tr  {
-    td{
-        font-size: small;
-    }
+tr {
+  td {
+    font-size: small;
+  }
 }
-.box{
-    border: 1px solid #5EBDBD;
-    text-align: center;
-    padding: 2em;
+.box {
     display: flex;
     justify-content: center;
+ 
+  & p{
+    width: 50%;
+    border: 1px solid #5ebdbd;
+    text-align: center;
+    padding: 2em;
+  }
 }
