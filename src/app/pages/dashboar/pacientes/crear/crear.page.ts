@@ -58,7 +58,7 @@ export class CrearPage implements OnInit {
 
     })
   }
-  update(param){
+  update(){
     console.log(this.form.controls)
     const body = {
       "cedula": this.form.controls.cedula.value,
