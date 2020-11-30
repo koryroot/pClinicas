@@ -31,12 +31,20 @@ export class TableListComponent implements OnInit {
     this.router.navigate([this.router.url + "/actualizar/" + cedula])
   }
   del(cedula){
-    this.paciente.deletePaciente(cedula).subscribe((res)=>{
+    if(this.endpoit === 'patient/all'){
+      this.paciente.deletePaciente(cedula).subscribe((res)=>{
       console.log(res);
       this.getlist();
       // this.router.navigate(['/dash/paciente']);
+    })}else{
+      console.log("aqui")
+      this.paciente.deleteConsulta(cedula).subscribe((res)=>{
+
+        console.log(res);
+        this.getlist();
+        // this.router.navigate(['/dash/paciente']);
+      })
     }
-    )
   }
   getlist(){
     this.loadding = true;

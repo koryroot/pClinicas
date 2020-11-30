@@ -12,13 +12,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let paciente of data">
-          <td *ngFor="let key of keys">{{paciente[key]}}</td>
+        <tr *ngFor="let dato of data">
+          <td *ngFor="let key of keys">{{dato[key]}}</td>
           <td>
-
-            <ion-icon name="pencil-outline" (click)="goto(paciente[endpoit === 'patient/all' ? 'cedula':'patientCedula'])" class="ml-2"></ion-icon>
-            <ion-icon name="trash-outline" class="ml-2" (click)="del(paciente[endpoit === 'patient/all' ? 'cedula':'patientCedula'])"></ion-icon>
-            
+            <div *ngIf="endpoit == 'patient/all'">
+              <ion-icon name="pencil-outline" (click)="goto(dato[endpoit === 'patient/all' ? 'cedula':'patientCedula'])" class="ml-2"></ion-icon>
+              <ion-icon name="trash-outline" class="ml-2" (click)="del(dato[endpoit === 'patient/all' ? 'cedula':'patientCedula'])"></ion-icon>
+            </div>
+            <div *ngIf="endpoit != 'patient/all'">
+              .
+              <ion-icon name="pencil-outline" (click)="goto(dato['patientCedula'])" class="ml-2"></ion-icon>
+              <ion-icon name="trash-outline" class="ml-2" (click)="del(dato['patientCedula'])"></ion-icon>
+            </div>
           </td>
         </tr>
         

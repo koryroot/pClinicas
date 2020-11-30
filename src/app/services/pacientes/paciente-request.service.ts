@@ -21,4 +21,23 @@ export class PacienteRequestService {
   deletePaciente(cedula){
     return this.http.delete(`${apiUrl}patient/delete?cedula=${cedula}&token=${this.auth.getToken()}`);
   }
+
+
+
+
+  /////////////////
+
+
+  // consultas
+  regCosulta(body){
+    console.log(`${apiUrl}consultation/create?token=${this.auth.getToken()}`)
+    return this.http.post(`${apiUrl}consultation/create?token=${this.auth.getToken()}`,body);
+  }
+  deleteConsulta(cedula){
+    // https://dgon3z.deta.dev/api/consultation/delete?consultId=40240953303&token=v-3rxyaqoWQ7FjtQOICjjYEGZUw
+
+    return this.http.delete(`${apiUrl}consultation/delete?consultId=${cedula}&token=${this.auth.getToken()}`);
+  }
+
+  
 }

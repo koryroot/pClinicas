@@ -41,7 +41,7 @@ export class CrearPage implements OnInit {
 
   save(){
     console.log(this.form.controls)
-    const body=
+    const body =
       {
         "patientCedula": this.form.controls.cedula.value,
         "insuranceNumber": this.form.controls.seguro.value,
@@ -53,9 +53,9 @@ export class CrearPage implements OnInit {
         "foto": ""
       }
       console.log(body)
-    // this.pacienterequest.regPaciente(body).subscribe((res)=>{
-    //   console.log(res);
-    // })
+    this.pacienterequest.regCosulta(body).subscribe((res)=>{
+      
+    })
   }
   update(param){
     console.log(this.param);
