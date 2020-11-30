@@ -28,6 +28,7 @@ export class PacientesPage implements OnInit {
   ngOnInit() {
    
   }
+ 
   buscar(data){
     console.log(data);
   }

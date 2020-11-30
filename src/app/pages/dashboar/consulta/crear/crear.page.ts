@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PacienteRequestService } from 'src/app/services/pacientes/paciente-request.service';
 
 @Component({
   selector: 'app-crear',
@@ -7,9 +10,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearPage implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+  public param;
+  public isUpdate: boolean;
+  public foto: string = "../../../../../assets/mas.png";
+  
+  constructor(
+    private router: Router,
+    private pacienterequest: PacienteRequestService,
+    private fb: FormBuilder,
+    private rute: ActivatedRoute) {
+      rute.params.subscribe(res=>{console.log(res)})
+    }
 
   ngOnInit() {
+    this.initform();
+    this.param = this.rute.snapshot.params.cedula;
+    console.log(typeof this.param);
+    this.param === "new" ? this.isUpdate = true :  this.isUpdate = false;
+  }
+  initform(){
+    this.form  = this.fb.group({
+      cedula: ['',Validators.required],
+      seguro: ['',Validators.required],
+      diagnostico: ['',Validators.required],
+      motivo: ['', Validators.required],
+      fecha: ['', Validators.required]
+    })
+  }
+
+  save(){
+    console.log(this.form.controls)
+    const body=
+      {
+        "patientCedula": this.form.controls.cedula.value,
+        "insuranceNumber": this.form.controls.seguro.value,
+        "date": this.form.controls.fecha.value,
+        "amount": 0,
+        "reason": this.form.controls.motivo.value,
+        "diagnose": this.form.controls.diagnostico.value,
+        "note": "",
+        "foto": ""
+      }
+      console.log(body)
+    // this.pacienterequest.regPaciente(body).subscribe((res)=>{
+    //   console.log(res);
+    // })
+  }
+  update(param){
+    console.log(this.param);
   }
 
 }

@@ -9,12 +9,14 @@ const routes: Routes = [
     component: ConsultaPage,
   },
   {
-    path: 'crear',
+    path: 'crear/:new',
     loadChildren: () => import('./crear/crear.module').then( m => m.CrearPageModule)
+
   },
   {
-    path: 'update/:cedula',
-    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+    path: 'actualizar/:cedula',
+    loadChildren: () => import('./crear/crear.module').then( m => m.CrearPageModule)
+
   }
 ];
 

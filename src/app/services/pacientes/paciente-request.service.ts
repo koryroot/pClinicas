@@ -18,4 +18,7 @@ export class PacienteRequestService {
     console.log(`${apiUrl}patient/register?token=${this.auth.getToken()}`)
     return this.http.post(`${apiUrl}patient/register?token=${this.auth.getToken()}`,body);
   }
+  deletePaciente(cedula){
+    return this.http.delete(`${apiUrl}patient/delete?cedula=${cedula}&token=${this.auth.getToken()}`);
+  }
 }

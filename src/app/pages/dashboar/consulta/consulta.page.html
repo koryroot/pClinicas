@@ -1,4 +1,11 @@
 <ion-content>
   <app-navbar></app-navbar>
-      <app-table-list [header]="header" [keys]="objectTable" [endpoit]="enpoint"></app-table-list>
+  <app-search ></app-search>
+  <div class="cont">
+    <app-table-list [header]="header" [keys]="objectTable" [endpoit]="enpoint"></app-table-list>
+  </div>
+  <div class="fixed-bottom">
+    <button type="button" class=" fadeIn circl mb-5" [routerLink]="['crear','new']">Nueva consulta</button>
+  </div>
+      
 </ion-content>
