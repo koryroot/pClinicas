@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
       this.splashScreen.hide();
     });
   }
-  OnInit(){
+  ngOnInit(){
     this.init()
   }
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, } from '@angular/router';
 import { PacienteRequestService } from 'src/app/services/pacientes/paciente-request.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-crear',
@@ -10,13 +12,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CrearPage implements OnInit {
   public form: FormGroup;
+  public param;
+  public isUpdate: boolean;
+  public foto: string = "../../../../../assets/mas.png";
   constructor(
-    private route: Router,
+    private router: Router,
     private pacienterequest: PacienteRequestService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private rute: ActivatedRoute) {
+      rute.params.subscribe(res=>{console.log(res)})
+    }
 
   ngOnInit() {
     this.initform();
+    this.param = this.rute.snapshot.params.cedula;
+    console.log(typeof this.param);
+    this.param === "new" ? this.isUpdate = true :  this.isUpdate = false;
   }
   initform(){
     this.form  = this.fb.group({
@@ -40,4 +51,8 @@ export class CrearPage implements OnInit {
       console.log(res);
     })
   }
+  update(param){
+
+  }
+
 }
